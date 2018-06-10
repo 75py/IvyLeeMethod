@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/loadingFragment">
+
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.nagopy.android.ivyleemethod.ui.loading.LoadingFragment"
+        android:label="loading_fragment"
+        tools:layout="@layout/loading_fragment" >
+        <action
+            android:id="@+id/action_loadingFragment_to_writeTasksFragment"
+            app:destination="@id/writeTasksFragment" />
+        <action
+            android:id="@+id/action_loadingFragment_to_currentTaskFragment"
+            app:destination="@id/currentTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/writeTasksFragment"
+        android:name="com.nagopy.android.ivyleemethod.ui.writetasks.WriteTasksFragment"
+        android:label="write_tasks_fragment"
+        tools:layout="@layout/write_tasks_fragment" />
+    <fragment
+        android:id="@+id/currentTaskFragment"
+        android:name="com.nagopy.android.ivyleemethod.ui.currenttask.CurrentTaskFragment"
+        android:label="current_task_fragment"
+        tools:layout="@layout/current_task_fragment" >
+        <action
+            android:id="@+id/action_currentTaskFragment_to_writeTasksFragment"
+            app:destination="@id/writeTasksFragment" />
+    </fragment>
+</navigation>

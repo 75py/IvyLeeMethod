@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import com.nagopy.android.ivyleemethod.rx.AppSchedulerProvider
+import com.nagopy.android.ivyleemethod.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -22,5 +24,9 @@ open class AppModule {
     @Singleton
     @Provides
     fun provideSharedPreferences(application: Application): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(application)
+
+    @Singleton
+    @Provides
+    fun provideSchedulerProvider(): SchedulerProvider = AppSchedulerProvider()
 
 }
