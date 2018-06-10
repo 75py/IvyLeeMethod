@@ -1,6 +1,6 @@
 package com.nagopy.android.ivyleemethod
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.nagopy.android.ivyleemethod.ui.main.MainFragment
 
