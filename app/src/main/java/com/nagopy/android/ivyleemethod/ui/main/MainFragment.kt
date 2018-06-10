@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.nagopy.android.ivyleemethod.R
 
-class MainFragment : androidx.fragment.app.Fragment() {
+class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
