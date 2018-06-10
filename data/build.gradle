@@ -39,6 +39,10 @@ dependencies {
     testImplementation "androidx.room:room-testing:$room_version"
 
     testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:4.0-alpha-2"
+    testImplementation 'androidx.test:runner:1.1.0-alpha3'
+    testImplementation 'org.mockito:mockito-core:2.13.0'
+    testImplementation "org.mockito:mockito-inline:2.11.0"
 
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
