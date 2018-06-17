@@ -22,11 +22,6 @@ android {
     dataBinding {
         enabled = true
     }
-    kapt {
-        arguments {
-            arg("room.schemaLocation", "$projectDir/schemas".toString())
-        }
-    }
 }
 
 dependencies {
