@@ -10,6 +10,8 @@ interface DailyTaskRepository {
 
     fun getDailyTask(date: Instant): Flowable<List<Task>>
 
+    fun getDailyTasksOnce(date: Instant): Maybe<List<Task>>
+
     fun getUncompletedDailyTasks(date: Instant): Maybe<List<Task>>
 
     fun upsert(task: List<Task>): Completable

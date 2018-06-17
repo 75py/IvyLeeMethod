@@ -4,6 +4,7 @@ import android.app.Application
 import com.nagopy.android.ivyleemethod.App
 import com.nagopy.android.ivyleemethod.data.DatabaseModule
 import com.nagopy.android.ivyleemethod.di.AppModule
+import com.nagopy.android.ivyleemethod.di.LoadingFragmentModule
 import com.nagopy.android.ivyleemethod.di.ViewModelModule
 import com.nagopy.android.ivyleemethod.di.activitymodule.MainActivityBuilder
 import dagger.BindsInstance
@@ -19,6 +20,7 @@ import javax.inject.Singleton
     , DatabaseModule::class
     , ViewModelModule::class
     , MainActivityBuilder::class
+    , LoadingFragmentModule::class
 ])
 interface AppComponent : AndroidInjector<App> {
 

@@ -1,10 +1,9 @@
 package com.nagopy.android.ivyleemethod.rx
 
 import androidx.annotation.CheckResult
-import io.reactivex.Completable
-import io.reactivex.Flowable
-import io.reactivex.Observable
-import io.reactivex.Single
+import androidx.lifecycle.LiveDataReactiveStreams
+import io.reactivex.*
+import org.reactivestreams.Publisher
 
 @CheckResult
 fun <T> Flowable<T>.toResult(schedulerProvider: SchedulerProvider):
@@ -42,6 +41,12 @@ fun <T> Completable.toResult(schedulerProvider: SchedulerProvider):
     return toObservable<T>().toResult(schedulerProvider)
 }
 
+@CheckResult
+fun <T> Maybe<T>.toResult(schedulerProvider: SchedulerProvider):
+        Observable<Result<T>> {
+    return toObservable().toResult(schedulerProvider)
+}
+
 sealed class Result<T>(val inProgress: Boolean) {
 
     class InProgress<T> : Result<T>(true) {
@@ -64,3 +69,5 @@ sealed class Result<T>(val inProgress: Boolean) {
         fun <T> failure(errorMessage: String, e: Throwable): Result<T> = Failure(errorMessage, e)
     }
 }
+
+fun <T> Publisher<T>.toLiveData() = LiveDataReactiveStreams.fromPublisher(this)

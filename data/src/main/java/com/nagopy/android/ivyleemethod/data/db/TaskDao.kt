@@ -18,6 +18,10 @@ abstract class TaskDao {
     abstract fun getDailyTasks(date: Instant): Flowable<List<Task>>
 
     @CheckResult
+    @Query("select * from task where date = :date order by priority")
+    abstract fun getDailyTasksOnce(date: Instant): Maybe<List<Task>>
+
+    @CheckResult
     @Query("select * from task where date = :date and isCompleted = 0 order by priority")
     abstract fun getUncompletedDailyTasks(date: Instant): Maybe<List<Task>>
 

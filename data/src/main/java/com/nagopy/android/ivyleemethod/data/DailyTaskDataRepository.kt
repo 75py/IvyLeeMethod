@@ -12,9 +12,12 @@ class DailyTaskDataRepository(
         private val database: RoomDatabase
         , private val taskDao: TaskDao
 ) : DailyTaskRepository {
-
     override fun getDailyTask(date: Instant): Flowable<List<Task>> {
         return taskDao.getDailyTasks(date)
+    }
+
+    override fun getDailyTasksOnce(date: Instant): Maybe<List<Task>> {
+        return taskDao.getDailyTasksOnce(date)
     }
 
     override fun getUncompletedDailyTasks(date: Instant): Maybe<List<Task>> {
